@@ -8,7 +8,7 @@ namespace ForensicBones2.Models
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Relatorio> Relatorios { get; set; }
-
+        public DbSet<InventarioEsqueleto> InventariosEsqueletos {  get; set; }
 
     }
 }

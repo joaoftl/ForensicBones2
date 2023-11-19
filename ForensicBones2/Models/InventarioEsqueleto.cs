@@ -27,6 +27,5 @@ namespace ForensicBones2.Models
         //public InventarioCranio InventarioCranio { get; set; }
 
 
-
     }
 }
