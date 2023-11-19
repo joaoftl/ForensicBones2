@@ -18,7 +18,10 @@ namespace ForensicBones2.Models
         public int UsuarioId { get; set; }
 
         [ForeignKey("UsuarioId")]
-        public Usuario Usuario { get; set; }      
+        public Usuario Usuario { get; set; }
+
+        [Display(Name = "Inventario do Esqueleto")]
+        public InventarioEsqueleto InventarioEsqueletoId { get; set; }
 
         [Required(ErrorMessage = "Obrigado informar a data")]
         public DateTime Data { get; set; } 

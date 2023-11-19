@@ -40,7 +40,7 @@ namespace ForensicBones2.Migrations
 
                     b.HasIndex("RelatorioId");
 
-                    b.ToTable("InventariosEsqueleto");
+                    b.ToTable("InventariosEsqueleto", (string)null);
                 });
 
             modelBuilder.Entity("ForensicBones2.Models.Relatorio", b =>
@@ -68,7 +68,7 @@ namespace ForensicBones2.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Relatorios");
+                    b.ToTable("Relatorios", (string)null);
                 });
 
             modelBuilder.Entity("ForensicBones2.Models.Usuario", b =>
@@ -99,7 +99,7 @@ namespace ForensicBones2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Usuarios", (string)null);
                 });
 
             modelBuilder.Entity("ForensicBones2.Models.InventarioEsqueleto", b =>
