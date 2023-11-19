@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ForensicBones2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ForensicBones2.Controllers
 {
+    [Authorize]
     public class RelatoriosController : Controller
     {
         private readonly AppDbContext _context;
@@ -21,7 +23,7 @@ namespace ForensicBones2.Controllers
         // GET: Relatorios
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Relatorios.Include(r => r.Usuario);
+            var appDbContext = _context.Relatorios.Include(r => r.Usuario);            
             return View(await appDbContext.ToListAsync());
         }
 

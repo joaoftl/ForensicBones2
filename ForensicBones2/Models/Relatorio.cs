@@ -18,7 +18,7 @@ namespace ForensicBones2.Models
         public int UsuarioId { get; set; }
 
         [ForeignKey("UsuarioId")]
-        public Usuario Usuario { get; set; }
+        public Usuario Usuario { get; set; }      
 
         [Required(ErrorMessage = "Obrigado informar a data")]
         public DateTime Data { get; set; } 
