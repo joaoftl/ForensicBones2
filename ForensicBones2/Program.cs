@@ -1,3 +1,6 @@
+using ForensicBones2.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace ForensicBones2
 {
     public class Program
@@ -10,6 +13,9 @@ namespace ForensicBones2
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
             var app = builder.Build();
