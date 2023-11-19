@@ -22,6 +22,8 @@ namespace ForensicBones2.Models
 
         public string Cargo { get; set; }
 
+        public ICollection<Relatorio> Relatorios { get; set; }
+
         public Perfil Perfil { get; set; }
     }
 
