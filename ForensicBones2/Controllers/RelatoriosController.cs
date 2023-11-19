@@ -159,6 +159,27 @@ namespace ForensicBones2.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Documento(int? id)
+        {
+            if(id == null)
+                return NotFound();
+
+            var usuario = await _context.Usuarios.FindAsync(id);
+
+            if (usuario == null)
+                return NotFound();
+
+            var relatorios = await _context.Relatorios
+                .Where(c => c.UsuarioId == id)
+                .OrderByDescending(c => c.Data)
+                .ToListAsync();
+
+            ViewBag.Usuario = usuario;
+
+            return View(relatorios);
+
+        }
+
         private bool RelatorioExists(int id)
         {
           return _context.Relatorios.Any(e => e.Id == id);
